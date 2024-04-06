@@ -52,7 +52,8 @@ namespace OrganizeItems
             {"EggBeater", new Vector3(4.13f, 0.37f, -13.58f)},
             {"BigBolt", new Vector3(4.13f, 0.37f, -13.58f)},
             {"MetalSheet", new Vector3(4.13f, 0.37f, -13.58f)},
-            {"WhoopieCushion", new Vector3(9.73f, 1.74f, -15.20f)}
+            {"WhoopieCushion", new Vector3(9.73f, 1.74f, -15.20f)},
+            {"Cog", new Vector3(4.13f, 0.37f, -13.58f) }
         };
     }
 }

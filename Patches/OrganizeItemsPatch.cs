@@ -1,10 +1,8 @@
 ﻿using BepInEx.Logging;
-using GameNetcodeStuff;
 using HarmonyLib;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace OrganizeItems.Patches
 {
