@@ -1,0 +1,9 @@
+{
+    "name": "OrganizeItems",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/Rbmukthegreat/FIndItemsForQuota",
+    "description": "Organizes the items on ship at the click of a button!",
+    "dependencies": [
+      "BepInEx-BepInExPack-5.4.2100"
+    ]
+  }
