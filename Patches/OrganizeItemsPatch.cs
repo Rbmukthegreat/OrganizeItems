@@ -1,8 +1,11 @@
 ﻿using BepInEx.Logging;
+using GameNetcodeStuff;
 using HarmonyLib;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static OrganizeItems.Networking.NetworkFunctions;
+using Random = UnityEngine.Random;
 
 namespace OrganizeItems.Patches
 {
@@ -11,6 +14,13 @@ namespace OrganizeItems.Patches
     {
         private static readonly ManualLogSource Log = Plugin.Log;
         private static GameObject Ship;
+
+        [HarmonyPatch(typeof(PlayerControllerB), "ConnectClientToPlayerObject")]
+        [HarmonyPostfix]
+        public static void OnLocalPlayerConnect()
+        {
+            NetworkingObjectManager.NetworkManagerInit();
+        }
 
         [HarmonyPatch(typeof(HUDManager), "AddTextToChatOnServer")]
         [HarmonyPostfix]
@@ -65,8 +75,8 @@ namespace OrganizeItems.Patches
 
         private static void DropItem(GrabbableObject item, Vector3 position)
         {
-            item.transform.position = position + new Vector3(Random.Range(-0.1f, 0.1f), 0f, Random.Range(-0.1f, 0.1f));
-            item.FallToGround();
+            NetworkingObjectManager.RunClientRpc(item.NetworkObject, position + 
+                new Vector3(Random.Range(-0.1f, 0.1f), 0, Random.Range(-0.1f, 0.1f)), item.transform.rotation);
         }
     }
 }

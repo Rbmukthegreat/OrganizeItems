@@ -10,7 +10,7 @@ public class Plugin : BaseUnityPlugin
 {
     private const string modGUID = "Rbmukthegreat.OrganizeItems";
     private const string modName = "Organize Items";
-    private const string modVersion = "1.0.1";
+    private const string modVersion = "1.0.2";
 
     private readonly Harmony harmony = new(modGUID);
 
